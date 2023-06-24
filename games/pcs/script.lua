@@ -16,7 +16,7 @@ end
 function GetPets()
     local tbl, pets = {}, {}
 
-    for i, v in pairs(workspace.PlayerPets:GetChildren()) do
+    for i, v in pairs(workspace.PetCenterParts:GetChildren()) do
         table.insert(pets, v.Name)
     end
     
