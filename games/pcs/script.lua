@@ -71,7 +71,7 @@ function Attack(Pet, Coin, Number)
     ReplicatedStorage.RemoteEvent:FireServer("Damage Cases", {
         [Coin] = {
             [Pet] = {
-                ["Current"] = "69F"
+                ["Current"] = "99Z"
             }
         }
     })
@@ -121,6 +121,18 @@ function AutoFarmCoins()
             end
         end
     end
+end
+
+function AutoFarmAbyss()
+	while task.wait(.7) and Config.AutoFarmAbyss do
+		for i, v in pairs(Pets) do
+            Attack(v, "Abyss", i)
+        end
+        
+        if workspace.UITouchObjects.AbyssReset:WaitForChild("TouchPart", 69).BillboardGui.Title.TextColor3 ~= Color3.fromRGB(255, 50, 50) then
+	        ReplicatedStorage.RemoteEvent:FireServer("Reset Abyss")
+        end
+	end
 end
 
 function AutoGrabCoins()
@@ -174,6 +186,13 @@ MainFolder:AddToggle({text = "Auto Farm Coins", callback = function(v)
 
     Pets = GetPets()
     AutoFarmCoins()
+end})
+
+MainFolder:AddToggle({text = "Auto Farm Abyss", callback = function(v)
+    Config.AutoFarmAbyss = v
+    
+    Pets = GetPets()
+    AutoFarmAbyss()
 end})
 
 MainFolder:AddToggle({text = "Auto Grab Coins", callback = function(v)
