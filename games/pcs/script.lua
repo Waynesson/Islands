@@ -167,7 +167,8 @@ function AutoSolveHardPuzzle()
         for i = 1, 25 do
             local Bulb = GetBulb(i)
             if Bulb and Bulb:FindFirstChild("LightPart") and Bulb.LightPart.Color ~= Color3.fromRGB(253, 234, 141) and i + 6 <= 25 then
-                fireclickdetector(GetBulb(i + 6).Bulb.ClickDetector)
+				firesignal(GetBulb(i + 6).Bulb.ClickDetector.MouseClick)
+                -- fireclickdetector(GetBulb(i + 6).Bulb.ClickDetector)
                 break
             end
         end
