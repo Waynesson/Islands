@@ -2027,8 +2027,8 @@ if DeveloperVersion == false then
 	else
 
 		Window = Fluent:CreateWindow({
-			Title = "Islands.God "..ScriptVersion.." [Premium!] "..holidayMessage,
-			SubTitle = "by neverloseyoursmile_88 and soldo_io",
+			Title = "Azure "..ScriptVersion.." [Premium!] "..holidayMessage,
+			SubTitle = "by Daddy Wayne",
 			TabWidth = 160,
 			Size = UDim2.fromOffset(580, 460),
 			Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -2049,8 +2049,8 @@ if DeveloperVersion == false then
 	end
 else
 	Window = Fluent:CreateWindow({
-		Title = "Islands.God "..ScriptVersion.." [Developer!] "..holidayMessage,
-		SubTitle = "by neverloseyoursmile_88 and soldo_io",
+		Title = "Azure "..ScriptVersion.." [Developer!] "..holidayMessage,
+		SubTitle = "by Daddy Wayne",
 		TabWidth = 160,
 		Size = UDim2.fromOffset(580, 460),
 		Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
