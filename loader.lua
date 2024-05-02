@@ -3033,11 +3033,11 @@ end
 
 local FishFarmCooldown = false
 function FishFarm()
-	local dis = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(1529, 339, -837)).Magnitude
+	local dis = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(-91, 29, -897)).Magnitude
 
 	if dis > 30 then
-		TeleportV4(Vector3.new(1529, 339, -837))
-		repeat wait() until (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(1529, 339, -837)).Magnitude < 5
+		TeleportV4(Vector3.new(-91, 34, -897))
+		repeat wait() until (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(-91, 29, -897)).Magnitude < 5
 		task.wait(0.5)
 	end 
 
