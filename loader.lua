@@ -2552,6 +2552,7 @@ end
 local FishFarmCooldown = false
 function FishFarm()
 	local newPosition = Vector3.new(1562.126953125, 342.0853271484375, -774.5136108398438)
+	local targetPosition = Vector3.new(1562.47265625, 331.2068176269531, -794.7468872070312)
 	local dis = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - newPosition).Magnitude
 
 	if dis > 30 then
@@ -2562,20 +2563,24 @@ function FishFarm()
 
 	if FishFarmCooldown == false then
 		FishFarmCooldown = true
+
+		-- Calculate the direction vector and normalize it
+		local directionVector = (targetPosition - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).unit
+
 		local args = {
 			[1] = Hash(),
 			[2] = {
 				[1] = {
 					["playerLocation"] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
-					["direction"] = Vector3.new(0.5, 0, 0.866), -- 60 degrees to the right
-					["strength"] = math.random(0.5, 1.5) -- Increased strength value
+					["direction"] = directionVector, -- Updated direction vector
+					["strength"] = math.random(1, 2) -- Adjusted strength value
 				}
 			}
 		}
 
 		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged:FindFirstChild(RemoteData:FindFirstChild("AngelRemote").Value):FireServer(unpack(args))
 
-		task.wait(math.random(13,15))
+		task.wait(math.random(13, 15))
 		local args = {
 			[1] = {
 				["success"] = true
@@ -2584,26 +2589,23 @@ function FishFarm()
 		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged:FindFirstChild(RemoteData:FindFirstChild("FishFarmFinishRemote").Value):FireServer(unpack(args))
 
 	--[[
-
 		local args = {
-		[1] = Hash(),
-		[2] = {
-			[1] = {}
+			[1] = Hash(),
+			[2] = {
+				[1] = {}
+			}
 		}
-	}
 	
-	game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged:FindFirstChild("jmqvFcP/dgikodtTfngoBWdtu"):FireServer(unpack(args))
-	
-
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged:FindFirstChild("jmqvFcP/dgikodtTfngoBWdtu"):FireServer(unpack(args))
 	]]
 
 		if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
 			game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Jump = true
 		end 
-		task.wait(math.random(0.1,0.3))
+		task.wait(math.random(0.1, 0.3))
 		FishFarmCooldown = false
 	end
-end	
+end
 
 -- Funktion zum Finden des nächsten Teils
 local function findNearestPart(A)
