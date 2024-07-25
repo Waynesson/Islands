@@ -2567,8 +2567,8 @@ function FishFarm()
 			[2] = {
 				[1] = {
 					["playerLocation"] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
-					["direction"] = Vector3.new(-0.9983646869659424, -9.509330567425422e-08, 0.057165950536727905),
-					["strength"] = math.random(0.5, 2)
+					["direction"] = Vector3.new(-0.5, 0, 0.5), -- Adjusted direction vector
+					["strength"] = math.random(0.1, 1) -- Adjusted strength value
 				}
 			}
 		}
@@ -2603,7 +2603,7 @@ function FishFarm()
 		task.wait(math.random(0.1,0.3))
 		FishFarmCooldown = false
 	end
-end		
+end	
 
 -- Funktion zum Finden des nächsten Teils
 local function findNearestPart(A)
