@@ -2568,7 +2568,7 @@ function FishFarm()
 				[1] = {
 					["playerLocation"] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
 					["direction"] = Vector3.new(-0.25, 0, 0.25), -- Further adjusted direction vector
-					["strength"] = math.random(0.1, 0.5) -- Further adjusted strength value
+					["strength"] = math.random(0.1, 0.7) -- Further adjusted strength value
 				}
 			}
 		}
