@@ -1,7 +1,7 @@
-print("Script Source Released on 17.03.2024 (DD/MM/YYYY because Islands is Dead!")
-warn("THIS SCRIPT IS DISCONTINUED FROM NOW!")
+print("Script on 17.03.2024 Islands is Discontinued!")
+warn("THIS SCRIPT IS DISCONTINUED")
 for i = 1, 50 do
-  print("Nekohub on Top | discord.gg/MbsxuDEzgT")
+  print("Kill Yourself Nigger | Waynesson.xyz")
 end
 -- This is a pretty old script so dont joke abt the source type (its older than 90% of Roblox comminity) --
 
@@ -11,7 +11,7 @@ local IsPremium = true
 local DidKey = false
 local ScriptVersion = "V4"
 
-local FileName = "Nekohub"
+local FileName = "heheheha"
 local GameName = "Islands"
 local DeveloperVersion = true
 
@@ -27,7 +27,7 @@ end
 
 SendNotification("Welcome!", "Welcome to "..FileName .. " " .. ScriptVersion.."!")
 
-local PremiumText1 = "Premium is only 2$ Lifetime. Go buy it in discord.gg/MbsxuDEzgT"
+local PremiumText1 = "Kill Yourself Nigger"
 
 if isfolder(FileName) then
 
